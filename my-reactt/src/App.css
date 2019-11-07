@@ -1,0 +1,29 @@
+.chat-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container > .chat {
+  width: 100%;
+  border: 1px solid grey;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.chat-container > .chat.me {
+  justify-content: flex-end;
+}
+
+.chat-container > .chat.me > .msg {
+  background-color: #fbf04c;
+}
+
+.chat > .msg {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: solid 1px #d8d8d8;
+  background-color: #ffffff;
+}
