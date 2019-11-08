@@ -20,15 +20,15 @@ const server = app.listen(PORT, () => {
 
 const io = socketIo(server);
 io.on("connection", socket => {
+  socket.emit("init", {
+    socketId: socket.id,
+    name: socket.id.substring(0, 5)
+  });
   socket.on("new-chat-from-client", data => {
     io.emit("new-chat-from-server", {
       msg: data.msg,
       name: socket.id.substring(0, 5),
       socketId: socket.id
     });
-  });
-  socket.emit("init", {
-    socketId: socket.id,
-    name: socket.id.substring(0, 5)
   });
 });
